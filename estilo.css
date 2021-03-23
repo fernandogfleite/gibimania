@@ -88,6 +88,7 @@
      text-align: center;
      font-size: 15px;
      padding: 20px;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  }
  
  body,
@@ -182,6 +183,18 @@
      display: none;
  }
  /*final Menu Mobile CSS */
+ /*
+ /*Butoões de ir e voltar*/
+ 
+ #butoes img {
+     width: 40px;
+ }
+ 
+ #butoes {
+     margin: 20px;
+     padding: 5px;
+ }
+ /*Fim de configurações de butões*/
  
  @media screen and (max-width:768px) {
      #menu {
