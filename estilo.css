@@ -207,7 +207,7 @@
      }
      /*Fim de configurações de butões*/
      
-     @media screen and (max-width:768px) {
+     @media screen and (max-width:1000px) {
          #menu {
              display: none;
          }
