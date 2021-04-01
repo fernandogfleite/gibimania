@@ -253,7 +253,7 @@
          width: 75%;
      }
      
-     @media screen and (min-width:300px) and (max-width:800px) and (orientation: landscape) {
+     @media screen and (min-width:300px) and (max-width:1000px) and (orientation: landscape) {
          #menu {
              display: none;
          }
@@ -285,7 +285,7 @@
          .conteudo img {
              margin: 25px;
              margin-left: 30px;
-             width: 80%;
+             width: 50%;
          }
          #foto {
              width: 60%;
