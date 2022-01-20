@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2? family = Amatic + SC: wght @ 700 & display = swap " rel=" stylesheet ">
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'operacoes.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>GibiMania</title>
+</head>
+
+
+<body class="cont">
+    <div>
+        <header class="cabe">
+            <img id="logot" src="{% static 'logo4.png' %}" alt="Logomarca do site Gibi Mania">
+    </div>
+
+    </header>
+    </div>
+
+
+    <div>
+        <h1 id="titulo" class="t">REGISTRA-SE NO SITE</h1>
+        <p id="assunto">
+            {% for error in form.non_field_errors %}
+            <div class="error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+            <div>
+                <form id="formulario" method="post">
+                    {% csrf_token %}
+                    <p>
+                        <label for="nome"> NOME DE USUÁRIO:  </label>
+
+                        <input type="text" name="username" id="nome">
+                        {% for error in form.username.errors %}
+                            <div style="color: red;">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        <label for="nome"> EMAIL DO ÚSUARIO:  </label>
+
+                        <input type="email" name="email" id="nome">
+                        {% for error in form.email.errors %}
+                            <div style="color: red;">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        <label for="isenha"> ESCOLHA A SENHA:  </label>
+
+                        <input type="password" name="password" id="isenha">
+                        {% for error in form.password.errors %}
+                            <div style="color: red;">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        <input id="registrar" type="submit" value="REGISTRAR">
+                    </p>
+                    <p id="parag">
+                        <P>Já possui uma conta?
+                            <a href="{% url 'login' %}" id="lin">  Faça login</a>
+                        </P>
+
+                    </p>
+
+                </form>
+
+            </div>
+        </p>
+
+    </div>
+    <br>
+
+    <hr>
+
+
+    <div id="rodape">
+        <footer>
+            <p>Copyright &copy; 2022 - by Emily Rocha, Isabelly Fernandes, Carina santos e Fernando Gabriel</p>
+        </footer>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+
+</html>

@@ -1,59 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
     <title>curiosidades</title>
 </head>
 
-<body>
+<body class="bg">
     <div class="cabeçalho">
         <header>
-            <img id="logo" src="logo4.png" alt="Logomarca do site Gibi Mania">
-            <nav id="menu">
+            <img id="logo" src="{% static 'logo4.png' %}" alt="Logomarca do site Gibi Mania">
+            <div>
+                <nav id="menu">
 
-                <li>
-                    <a href="index.html">
-                       HOME
-                    </a>
-                </li>
-                <li>
-                    <a href="turmacrianca.html">TURMA CRIANÇA</a>
-                </li>
-                <li>
-                    <a href="turmajovem.html">TURMA JOVEM</a>
-                </li>
-                <li>
-                    <a href="curiosidades.html">CURIOSIDADES</a>
-                </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                        HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'turmacrianca' %}">TURMA CRIANÇA</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'turmajovem' %}">TURMA JOVEM</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'curiosidades' %}">CURIOSIDADES</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">LOGOUT</a>
+                    </li>
 
 
 
 
-            </nav>
+                </nav>
+            </div>
 
             <br>
 
             <div id="menumobile">
                 <input type="checkbox" id="chec">
                 <label for="chec">
-                        <img src="menu.png" alt="Menu mobile">
+                        <img src="{% static 'menu.png' %}" alt="Menu mobile">
                     </label>
                 <nav id="teste1">
                     <ul>
                         <li>
-                            <a href="index.html"> HOME</a>
+                            <a href="{% url 'index' %}"> HOME</a>
                         </li>
                         <li>
-                            <a href="turmacrianca.html">TURMA CRIANÇA</a>
+                            <a href="{% url 'turmacrianca' %}">TURMA CRIANÇA</a>
                         </li>
                         <li>
-                            <a href="turmajovem.html">TURMA JOVEM</a>
+                            <a href="{% url 'turmajovem' %}">TURMA JOVEM</a>
                         </li>
                         <li>
-                            <a href="curiosidades.html">CURIOSIDADES</a>
+                            <a href="{% url 'curiosidades' %}">CURIOSIDADES</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}">LOGOUT</a>
                         </li>
 
 
@@ -153,9 +162,9 @@
     </div>
     <br>
     <div id="butoes">
-        <a href="turmajovem.html">
+        <a href="{% url 'turmajovem' %}">
             <button>
-                <img src="back.png" alt="">
+                <img src="{% static 'back.png' %}" alt="">
             </button>
     </div>
     <br>

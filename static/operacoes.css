@@ -19,6 +19,13 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .error{
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: red;
+        }
         
         #formulario {
             text-align: center;

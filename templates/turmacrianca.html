@@ -1,57 +1,67 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
     <title>TurmaCriança</title>
 </head>
 
-<body>
+<body class="bg">
     <div class="cabeçalho">
         <header>
-            <img id="logo" src="logo4.png" alt="Logomarca do site Gibi Mania">
-            <nav id="menu">
+            <img id="logo" src="{% static 'logo4.png' %}" alt="Logomarca do site Gibi Mania">
+            <div>
+                <nav id="menu">
 
-                <li>
-                    <a href="index.html">
-                       HOME
-                    </a>
-                </li>
-                <li>
-                    <a href="turmacrianca.html">TURMA CRIANÇA</a>
-                </li>
-                <li>
-                    <a href="turmajovem.html">TURMA JOVEM</a>
-                </li>
-                <li>
-                    <a href="curiosidades.html">CURIOSIDADES</a>
-                </li>
+                    <li>
+                        <a href="{% url 'index' %}">
+                        HOME
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'turmacrianca' %}">TURMA CRIANÇA</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'turmajovem' %}">TURMA JOVEM</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'curiosidades' %}">CURIOSIDADES</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'logout' %}">LOGOUT</a>
+                    </li>
 
 
-            </nav>
+                </nav>
+            </div>
 
             <br>
 
             <div id="menumobile">
                 <input type="checkbox" id="chec">
                 <label for="chec">
-                        <img src="menu.png" alt="Menu mobile">
+                        <img src="{% static 'menu.png' %}" alt="Menu mobile">
                     </label>
                 <nav id="teste1">
                     <ul>
                         <li>
-                            <a href="index.html"> HOME</a>
+                            <a href="{% url 'index' %}"> HOME</a>
                         </li>
                         <li>
-                            <a href="turmacrianca.html">TURMA CRIANÇA</a>
+                            <a href="{% url 'turmacrianca' %}">TURMA CRIANÇA</a>
                         </li>
                         <li>
-                            <a href="turmajovem.html">TURMA JOVEM</a>
+                            <a href="{% url 'turmajovem' %}">TURMA JOVEM</a>
                         </li>
                         <li>
-                            <a href="curiosidades.html">CURIOSIDADES</a>
+                            <a href="{% url 'curiosidades' %}">CURIOSIDADES</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'logout' %}">LOGOUT</a>
                         </li>
 
 
@@ -75,7 +85,7 @@
         <p id="assunto">
             <h3>Mônica</h3>
 
-            <img src="turminha/monicaturminha.png" alt="mônica crinça">
+            <img src="{% static 'turminha/monicaturminha.png' %}" alt="mônica crinça">
 
 
 
@@ -96,7 +106,7 @@
 
         <p>
             <h3>Cebolinha</h3>
-            <img src="turminha/cebolinhaturminha.png" alt="cebolinha criança">
+            <img src="{% static 'turminha/cebolinhaturminha.png' %}" alt="cebolinha criança">
 
             <p>È um garoto de cabelos espetados que, quando fala, troca o "R" pelo "L". Parceiro de aventuras da Mônica, a quem vive tentando derrotar com seus "planos infalíveis", podendo diversas vezes ser considerado um vilão na série. </p>
             <p>Cebolinha é um dos únicos personagens clássicos da Turma da Mônica que usa sapatos. Isto porque ele foi criado em uma época em que todos os personagens usavam sapatos e, como a quantidade de personagens foi aumentando ao longo dos anos, Mauricio
@@ -109,7 +119,7 @@
 
         <p>
             <h3>Magali</h3>
-            <img src="turminha/magaliturminha.png" alt="magali criança">
+            <img src="{% static 'turminha/magaliturminha.png' %}" alt="magali criança">
 
             <p>
                 Ela é uma menina de apetite voraz e insaciável, frequentemente querendo saber de comer, embora que com tanto apetite continue eternamente magra. Ela também é a melhor amiga da Mônica e por isso é uma das únicas personagens que não brigam com ela. Tem
@@ -128,7 +138,7 @@
 
         <p>
             <h3>Cascão</h3>
-            <img src="turminha/cascãoturminha.png" alt="cascão criança" id="foto">
+            <img src="{% static 'turminha/cascãoturminha.png' %}" alt="cascão criança" id="foto">
             <p>
                 Mora com seus pais e com seu porco de estimação, Chovinista, que é bem esperto e limpo, ao contrário do dono. Também é namorado da Cascuda, uma menina que, antes, era sujinha como ele, mas que passou a ser limpa e organizada.
             </p>
@@ -145,14 +155,14 @@
     </div>
 
     <div id="butoes">
-        <a href="index.html">
+        <a href="{% url 'index' %}">
             <button>
-                <img src="back.png" alt="">
+                <img src="{% static 'back.png' %}" alt="">
             </button>
         </a>
-        <a href="turmajovem.html">
+        <a href="{% url 'turmajovem' %}">
             <button>
-               <img src="next.png" alt="next">
+               <img src="{% static 'next.png' %}" alt="next">
             </button>
         </a>
     </div>

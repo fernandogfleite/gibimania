@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2? family = Amatic + SC: wght @ 700 & display = swap " rel=" stylesheet ">
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="operacoes.css">
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'operacoes.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
     <title>Login</title>
@@ -19,7 +20,7 @@
 <body class="cont">
     <div>
         <header class="cabe">
-            <img id="logot" src="logo4.png" alt="Logomarca do site Gibi Mania">
+            <img id="logot" src="{% static 'logo4.png' %}" alt="Logomarca do site Gibi Mania">
     </div>
 
     </header>
@@ -29,24 +30,40 @@
     <div id="ajuste">
         <h1 id="titulo" class="t">FAZER LOGIN</h1>
         <p id="assunto">
+            {% for error in form.non_field_errors %}
+            <div class="error">
+                <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
             <div>
-                <form id="formulario">
+                <form id="formulario" method="post">
+                    {% csrf_token %}
                     <p>
-                        <label for="nome"> EMAIL OU NOME DO ÚSUARIO:</label>
+                        <label for="nome"> NOME DE USUÁRIO:</label>
                         <br>
-                        <input type="text" name="fnome " id="nome">
+                        <input type="text" name="username" id="nome">
+                        {% for error in form.username.errors %}
+                            <div style="color: red;">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
                     </p>
                     <p>
                         <label for="isenha"> SENHA:</label>
                         <br>
-                        <input type="password" name="fisenha" id="isenha">
+                        <input type="password" name="password" id="isenha">
+                        {% for error in form.password.errors %}
+                            <div style="color: red;">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
                     </p>
                     <p>
                         <input id="enviar" type="submit" value="LOGIN">
                     </p>
                     <p id="parag">
                         <P>Não possui cadastro ainda?
-                            <a href="registro.html" id="lin">  Registrar</a>
+                            <a href="{% url 'registro' %}" id="lin">  Registrar</a>
                         </P>
 
                     </p>
