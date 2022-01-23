@@ -43,17 +43,17 @@ def do_login(request):
     return render(request, 'login.html', context)
 
 
-@login_required(login_url="login/")
+@login_required(login_url="../login/")
 def curiosidades(request):
     return render(request, 'curiosidades.html')
 
 
-@login_required(login_url="login/")
+@login_required(login_url="../login/")
 def turmajovem(request):
     return render(request, 'turmajovem.html')
 
 
-@login_required(login_url="login/")
+@login_required(login_url="../login/")
 def turmacrianca(request):
     return render(request, 'turmacrianca.html')
 
